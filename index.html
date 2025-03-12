@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MY_PROJECT</title>
   <link rel="stylesheet" href="./homePage/homepage.css">
 </head>
+
 <body>
   <header>
     <button id="toggleSidebar" aria-controls="sidebar" aria-expanded="false">☰ Menu</button>
@@ -18,7 +20,7 @@
       <img src="../forPictures/profilicon.png" alt="Profile Icon" class="profile-icon" id="profileIcon" />
     </div>
   </header>
-  
+
   <aside id="sidebar" aria-label="Sidebar Navigation">
     <nav>
       <ul>
@@ -32,20 +34,20 @@
       </ul>
     </nav>
   </aside>
-  
+
   <main>
     <p>Main Content</p>
   </main>
-  
+
   <footer>
     <a href="https://t.me/Diyorbek_Faxriddinov" class="telegram-link">@Diyorbek_Faxriddinov</a>
     <p>Contact:
       <a href="tel:+998990637695" class="phone-link">+998990637695</a>
     </p>
   </footer>
-  
+
   <button id="chatToggleBtn" aria-controls="chat-panel" aria-expanded="false" class="chat-toggle-btn">💬</button>
-  
+
   <div id="chat-panel" class="chat-panel closed" aria-label="Chat Widget">
     <div class="chat-header">
       <h2>Chat</h2>
@@ -61,12 +63,13 @@
       <button type="button">Send</button>
     </div>
   </div>
-  
+
   <div class="profile-panel closed" id="profilePanel">
     <div class="profile-header">
       <span id="profileUserNameDisplay"></span>
       <input type="email" id="profileUserNameInput" class="profile-input" style="display: none;">
-      <button id="profileCloseBtn" aria-controls="profilePanel" aria-expanded="true" class="profile-close-btn">×</button>
+      <button id="profileCloseBtn" aria-controls="profilePanel" aria-expanded="true"
+        class="profile-close-btn">×</button>
     </div>
     <div class="profile-body">
       <p>
@@ -85,7 +88,8 @@
       <button id="signOutBtn" class="profile-signout-btn">Sign Out</button>
     </div>
   </div>
-  
+
   <script src="./homePage/homepage.js"></script>
 </body>
+
 </html>

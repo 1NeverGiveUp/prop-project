@@ -140,6 +140,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("profileUserNameDisplay").textContent = storedUser.username;
                     document.getElementById("profileNameDisplay").textContent = storedUser.name;
                     document.getElementById("profileEmailDisplay").textContent = storedUser.email;
+
+                    if (storedUser.profilpicture && storedUser.profilpicture !== "") {
+                        profileIcon.src = storedUser.profilpicture;
+                    } else {
+                        profileIcon.src = "../forPictures/profilicon.png";
+                    }
                 }
             } else {
                 if (profileIconContainer) {
@@ -160,10 +166,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const editProfileBtn = document.getElementById("editProfileBtn");
 
             if (editProfileBtn) {
-                editProfileBtn.addEventListener("click", function() {
+                editProfileBtn.addEventListener("click", function () {
                     window.location.href = "../forProfilePage/profilePage.html";
                 });
-            }            
+            }
         }
     };
 

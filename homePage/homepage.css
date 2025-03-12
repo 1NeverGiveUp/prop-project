@@ -104,7 +104,7 @@ header button:hover {
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
 
 #sidebar {
@@ -113,7 +113,7 @@ header button:hover {
     left: 0;
     width: 250px;
     height: calc(100% - 60px);
-    background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.9);
     padding: 20px;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
     transform: translateX(-100%);
@@ -314,11 +314,25 @@ footer {
 }
 
 @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .chat-input textarea.error {
@@ -349,10 +363,10 @@ footer {
     top: 20%;
     right: 20px;
     width: 300px;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0, 0, 0, 0.85);
     color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     overflow: hidden;
     transition: transform 0.3s ease, opacity 0.3s ease;
     z-index: 2000;
@@ -404,6 +418,7 @@ footer {
     border-radius: 4px;
     font-size: 14px;
 }
+
 .toggle-password-btn {
     background: transparent;
     border: none;
@@ -412,7 +427,9 @@ footer {
     font-size: 14px;
     margin-left: 8px;
 }
-.edit-profile-btn, .save-profile-btn {
+
+.edit-profile-btn,
+.save-profile-btn {
     padding: 8px 16px;
     margin-right: 10px;
     background: #ffffff00;
@@ -422,7 +439,9 @@ footer {
     transition: background 0.3s ease, color 0.3s ease;
     cursor: pointer;
 }
-.edit-profile-btn:hover, .save-profile-btn:hover {
+
+.edit-profile-btn:hover,
+.save-profile-btn:hover {
     background: #dddddd80;
     color: #fff;
 }
@@ -446,6 +465,7 @@ footer {
     transition: background 0.3s ease, color 0.3s ease, transform 0.1s ease;
     cursor: pointer;
 }
+
 .profile-signout-btn:hover {
     background: #dddddd80;
     color: #fff;
@@ -456,10 +476,12 @@ footer {
         height: 50px;
         padding: 0 10px;
     }
+
     #sidebar {
         top: 50px;
         height: calc(100% - 50px);
     }
+
     .chat-panel {
         width: 90%;
         right: 5%;
@@ -471,11 +493,13 @@ footer {
         width: 120px;
         font-size: 14px;
     }
+
     .auth-container a {
         padding: 6px 10px;
         margin-left: 5px;
         font-size: 12px;
     }
+
     #toggleSidebar {
         padding: 6px 10px;
         font-size: 18px;
