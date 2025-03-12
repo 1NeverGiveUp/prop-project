@@ -113,6 +113,10 @@ button {
   transition: background 0.3s;
 }
 
+.back-btn {
+  background-color: #ffffff16;
+}
+
 .edit-btn {
   background: #ffa600;
 }

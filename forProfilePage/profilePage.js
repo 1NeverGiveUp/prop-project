@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const saveEditBtn = document.getElementById("saveEditBtn");
   const cancelEditBtn = document.getElementById("cancelEditBtn");
 
+  const backBtn = document.getElementById("backBtn")
   const editBtn = document.getElementById("editBtn");
   const logoutBtn = document.getElementById("logoutBtn");
   const deleteBtn = document.getElementById("deleteBtn");
@@ -56,6 +57,10 @@ document.addEventListener("DOMContentLoaded", function () {
   togglePasswordIcon.addEventListener("click", function () {
     isPasswordVisible = !isPasswordVisible;
     passwordSpan.textContent = isPasswordVisible ? realPassword : "*".repeat(passwordLength);
+  });
+
+  backBtn.addEventListener("click", function () {
+    window.location.href = "../index.html";
   });
 
   editBtn.addEventListener("click", function () {
