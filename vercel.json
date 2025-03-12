@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/forProfilePage/profilepage.html", "destination": "/forProfilePage/profilepage.html" }
+    ]
+  }
+  
