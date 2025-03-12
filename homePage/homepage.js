@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (editProfileBtn) {
                 editProfileBtn.addEventListener("click", function() {
-                    window.location.href = "../forProfilePage/profilepage.html";
+                    window.location.href = "../forProfilePage/profilePage.html";
                 });
             }            
         }
