@@ -1,6 +1,10 @@
 {
-    "rewrites": [
-      { "source": "/forProfilePage/profilepage.html", "destination": "/forProfilePage/profilepage.html" }
-    ]
+    "routes": [
+      { "src": "/forProfilePage/", "dest": "/forProfilePage/profilePage.html" },
+      { "src": "/forLogin/", "dest": "/forLogin/login.html" },
+      { "src": "/forSignup/", "dest": "/forSignup/signup.html" },
+      { "src": "/homePage/", "dest": "/homePage/index.html" }
+    ],
+    "cleanUrls": false
   }
   
