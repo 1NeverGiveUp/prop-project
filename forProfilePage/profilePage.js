@@ -101,6 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
   deleteBtn.addEventListener("click", function () {
     localStorage.removeItem("user");
     localStorage.setItem("isLoggedIn", "false");
-    window.location.href = "../forSignUp/signup.html";
+    window.location.href = "../forSignup/signup.html";
   });
 });
