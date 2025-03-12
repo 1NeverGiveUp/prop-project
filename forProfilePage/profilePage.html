@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil Sahifasi</title>
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="profilePage.css">
+</head>
+<body>
+  <div class="profile-card">
+    <img id="profileImage" src="../forPictures/profilicon.png" alt="Profil rasmi" />
+    <h2 id="fullName">Foydalanuvchi ismi</h2>
+    
+    <div class="profile-info">
+      <p><strong>Foydalanuvchi nomi:</strong> <span id="usernameDisplay"></span></p>
+      <p><strong>Email:</strong> <span id="emailDisplay"></span></p>
+      <p><strong>Telefon raqami:</strong> <span id="telDisplay"></span></p>
+      
+      <div class="password-row">
+        <strong>Parol:</strong>
+        <span id="passwordDisplay">********</span>
+        <i class='bx bx-low-vision toggle-icon' id="togglePasswordIcon"></i>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button class="edit-btn" id="editBtn">Tahrirlash</button>
+      <button class="logout-btn" id="logoutBtn">Chiqish</button>
+      <button class="delete-btn" id="deleteBtn">Akkauntni O'chirish</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="editModal">
+    <div class="modal-content">
+      <h3>Ma'lumotlarni tahrirlash</h3>
+      <form class="modal-form" id="editForm">
+        <label for="editName">Ism</label>
+        <input type="text" id="editName" />
+
+        <label for="editLastname">Familya</label>
+        <input type="text" id="editLastname" />
+
+        <label for="editUsername">Foydalanuvchi nomi</label>
+        <input type="text" id="editUsername" />
+
+        <label for="editEmail">Email</label>
+        <input type="email" id="editEmail" />
+
+        <label for="editTel">Telefon raqami</label>
+        <input type="tel" id="editTel" />
+
+        <label for="editPassword">Parol</label>
+        <input type="text" id="editPassword" />
+
+        <div class="modal-buttons">
+          <button type="button" class="save-btn" id="saveEditBtn">Saqlash</button>
+          <button type="button" class="cancel-btn" id="cancelEditBtn">Bekor qilish</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="profilePage.js"></script>
+</body>
+</html>

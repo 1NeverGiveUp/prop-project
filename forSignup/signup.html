@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up Page</title>
+  <link rel="stylesheet" href="../forautstyle/autstyle.css" />
+</head>
+<body>
+  <div class="signup-container">
+    <div class="form-box">
+      <h2>Ro'yxatdan O'tish</h2>
+      <form id="signupForm">
+        <label for="name">Ism</label>
+        <input type="text" id="name" placeholder="Ismingizni kiriting" required />
+
+        <label for="lastname">Familya</label>
+        <input type="text" id="lastname" placeholder="Familyangizni kiriting" required />
+
+        <label for="username">Foydalanuvchi nomi</label>
+        <input type="text" id="username" placeholder="Foydalanuvchi nomi kiriting" required />
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Emailni kiriting" required />
+
+        <label for="telNumber">Telefon raqami</label>
+        <input type="tel" id="telNumber" placeholder="Telefon raqamingizni kiriting" required />
+
+        <label for="password">Parol</label>
+        <input type="password" id="password" placeholder="Parolni kiriting" required />
+
+        <label for="confirmPassword">Parolni tasdiqlang</label>
+        <input type="password" id="confirmPassword" placeholder="Parolni tasdiqlang" required />
+
+        <label for="profilpicture">Profilga rasm qo'shish</label>
+        <input type="file" id="profilpicture" accept="image/*" required />        
+
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="switch-link">
+        <p>Akkauntingiz bormi? <a href="/forLogin/login.html">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>

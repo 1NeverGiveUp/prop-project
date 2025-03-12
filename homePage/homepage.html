@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY_PROJECT</title>
+  <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+  <header>
+    <button id="toggleSidebar" aria-controls="sidebar" aria-expanded="false">☰ Menu</button>
+    <input type="search" placeholder="Search 🔎" aria-label="Search" class="search-input">
+    <div class="auth-container">
+      <a href="../forLogin/login.html">Log in</a>
+      <a href="../forSignup/signup.html">Sign up</a>
+    </div>
+    <div class="profile-icon-container" id="profileIconContainer" style="display: none;">
+      <img src="../forPictures/profilicon.png" alt="Profile Icon" class="profile-icon" id="profileIcon" />
+    </div>
+  </header>
+  
+  <aside id="sidebar" aria-label="Sidebar Navigation">
+    <nav>
+      <ul>
+        <li><a href="#">Barchasi</a></li>
+        <li><a href="#">Ko‘chmas mulk ijaralari</a></li>
+        <li><a href="#">Elektronika va texnika ijaralari</a></li>
+        <li><a href="#">Transport vositalari ijaralari</a></li>
+        <li><a href="#">Asbob-uskunalar va jihozlar ijaralari</a></li>
+        <li><a href="#">Tadbir va marosim jihozlari ijaralari</a></li>
+        <li><a href="#">Kiyim va aksessuarlar ijaralari</a></li>
+      </ul>
+    </nav>
+  </aside>
+  
+  <main>
+    <p>Main Content</p>
+  </main>
+  
+  <footer>
+    <a href="https://t.me/Diyorbek_Faxriddinov" class="telegram-link">@Diyorbek_Faxriddinov</a>
+    <p>Contact:
+      <a href="tel:+998990637695" class="phone-link">+998990637695</a>
+    </p>
+  </footer>
+  
+  <button id="chatToggleBtn" aria-controls="chat-panel" aria-expanded="false" class="chat-toggle-btn">💬</button>
+  
+  <div id="chat-panel" class="chat-panel closed" aria-label="Chat Widget">
+    <div class="chat-header">
+      <h2>Chat</h2>
+      <button id="chatCloseBtn" aria-controls="chat-panel" aria-expanded="true">×</button>
+    </div>
+    <div class="chat-body">
+      <ul class="chat-messages">
+        <li class="received">Hello! How can I help you?</li>
+      </ul>
+    </div>
+    <div class="chat-input">
+      <textarea placeholder="Write a message..." aria-label="Message"></textarea>
+      <button type="button">Send</button>
+    </div>
+  </div>
+  
+  <div class="profile-panel closed" id="profilePanel">
+    <div class="profile-header">
+      <span id="profileUserNameDisplay"></span>
+      <input type="email" id="profileUserNameInput" class="profile-input" style="display: none;">
+      <button id="profileCloseBtn" aria-controls="profilePanel" aria-expanded="true" class="profile-close-btn">×</button>
+    </div>
+    <div class="profile-body">
+      <p>
+        <strong>Name:</strong>
+        <span id="profileNameDisplay"></span>
+        <input type="text" id="profileNameInput" class="profile-input" style="display: none;">
+      </p>
+      <p>
+        <strong>Email:</strong>
+        <span id="profileEmailDisplay"></span>
+        <input type="email" id="profileEmailInput" class="profile-input" style="display: none;">
+      </p>
+    </div>
+    <div class="profile-footer">
+      <button id="editProfileBtn" class="edit-profile-btn">More</button>
+      <button id="signOutBtn" class="profile-signout-btn">Sign Out</button>
+    </div>
+  </div>
+  
+  <script src="homepage.js"></script>
+</body>
+</html>
