@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (storedUser && storedUser.username === username && storedUser.password === password) {
       localStorage.setItem("isLoggedIn", "true");
       alert("Tizimga kirish muvaffaqiyatli!");
-      window.location.href = "../homepage.html";
+      window.location.href = "../index.html";
     } else {
       alert("Foydalanuvchi nomi yoki parol noto'g'ri!");
     }
