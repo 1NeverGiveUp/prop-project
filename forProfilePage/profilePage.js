@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const userStr = localStorage.getItem("user");
   if (!userStr) {
-    window.location.href = "/forLogin/login.html";
-    return;
+      window.location.href = "/forLogin/login.html";
+      return;
   }
   let userData = JSON.parse(userStr);
 
@@ -25,82 +25,72 @@ document.addEventListener("DOMContentLoaded", function () {
   const saveEditBtn = document.getElementById("saveEditBtn");
   const cancelEditBtn = document.getElementById("cancelEditBtn");
 
-  const backBtn = document.getElementById("backBtn")
   const editBtn = document.getElementById("editBtn");
   const logoutBtn = document.getElementById("logoutBtn");
   const deleteBtn = document.getElementById("deleteBtn");
 
   let isPasswordVisible = false;
-  let realPassword = userData.password;
-  const passwordLength = realPassword ? realPassword.length : 8;
+  let realPassword = userData.password || "********"; 
 
   function renderProfile() {
-    fullNameEl.textContent = userData.name + " " + userData.lastname;
-    usernameDisplay.textContent = userData.username;
-    emailDisplay.textContent = userData.email;
-    telDisplay.textContent = userData.telNumber;
+      fullNameEl.textContent = userData.name + " " + userData.lastname;
+      usernameDisplay.textContent = userData.username;
+      emailDisplay.textContent = userData.email;
+      telDisplay.textContent = userData.telNumber;
 
-    if (userData.profilpicture && userData.profilpicture !== "") {
-      profileImage.src = userData.profilpicture;
-    } else {
-      profileImage.src = "../forPictures/profilicon.png";
-    }
+      profileImage.src = userData.profilpicture && userData.profilpicture !== ""
+          ? userData.profilpicture
+          : "../forPictures/profilicon.png";
 
-    if (!isPasswordVisible) {
-      passwordSpan.textContent = "*".repeat(passwordLength);
-    } else {
-      passwordSpan.textContent = realPassword;
-    }
+      passwordSpan.textContent = isPasswordVisible ? realPassword : "********";
   }
   renderProfile();
 
   togglePasswordIcon.addEventListener("click", function () {
-    isPasswordVisible = !isPasswordVisible;
-    passwordSpan.textContent = isPasswordVisible ? realPassword : "*".repeat(passwordLength);
-  });
+      isPasswordVisible = !isPasswordVisible;
+      passwordSpan.textContent = isPasswordVisible ? realPassword : "********";
 
-  backBtn.addEventListener("click", function () {
-    window.location.href = "../index.html";
+      // Ikonka almashtirish
+      togglePasswordIcon.classList.toggle("bx-low-vision", !isPasswordVisible);
+      togglePasswordIcon.classList.toggle("bx-show", isPasswordVisible);
   });
 
   editBtn.addEventListener("click", function () {
-    editModal.style.display = "flex";
-    editName.value = userData.name;
-    editLastname.value = userData.lastname;
-    editUsername.value = userData.username;
-    editEmail.value = userData.email;
-    editTel.value = userData.telNumber;
-    editPassword.value = userData.password;
+      editModal.style.display = "flex";
+      editName.value = userData.name;
+      editLastname.value = userData.lastname;
+      editUsername.value = userData.username;
+      editEmail.value = userData.email;
+      editTel.value = userData.telNumber;
+      editPassword.value = userData.password;
   });
 
   saveEditBtn.addEventListener("click", function () {
-    userData.name = editName.value.trim();
-    userData.lastname = editLastname.value.trim();
-    userData.username = editUsername.value.trim();
-    userData.email = editEmail.value.trim();
-    userData.telNumber = editTel.value.trim();
-    userData.password = editPassword.value;
-    realPassword = userData.password;
+      userData.name = editName.value.trim();
+      userData.lastname = editLastname.value.trim();
+      userData.username = editUsername.value.trim();
+      userData.email = editEmail.value.trim();
+      userData.telNumber = editTel.value.trim();
+      userData.password = editPassword.value;
+      realPassword = userData.password;
 
-    localStorage.setItem("user", JSON.stringify(userData));
-
-    renderProfile();
-
-    editModal.style.display = "none";
+      localStorage.setItem("user", JSON.stringify(userData));
+      renderProfile();
+      editModal.style.display = "none";
   });
 
   cancelEditBtn.addEventListener("click", function () {
-    editModal.style.display = "none";
+      editModal.style.display = "none";
   });
 
   logoutBtn.addEventListener("click", function () {
-    localStorage.setItem("isLoggedIn", "false");
-    window.location.href = "/forLogin/login.html";
+      localStorage.setItem("isLoggedIn", "false");
+      window.location.href = "/forLogin/login.html";
   });
 
   deleteBtn.addEventListener("click", function () {
-    localStorage.removeItem("user");
-    localStorage.setItem("isLoggedIn", "false");
-    window.location.href = "../forSignup/signup.html";
+      localStorage.removeItem("user");
+      localStorage.setItem("isLoggedIn", "false");
+      window.location.href = "../forSignUp/signup.html";
   });
 });

@@ -15,4 +15,26 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Foydalanuvchi nomi yoki parol noto'g'ri!");
     }
   });
+
+  function setupPasswordToggle(inputId, iconId) {
+    const input = document.getElementById(inputId);
+    const icon = document.getElementById(iconId);
+
+    input.addEventListener("input", () => {
+      icon.style.display = input.value ? "block" : "none";
+    });
+
+    icon.addEventListener("click", () => {
+      const isPasswordHidden = input.type === "password";
+      input.type = isPasswordHidden ? "text" : "password";
+      icon.classList.toggle("bx-hide", !isPasswordHidden);
+      icon.classList.toggle("bx-show", isPasswordHidden);
+    });
+
+    icon.style.display = "none";
+  }
+
+  setupPasswordToggle("password", "togglePasswordButton");
+  setupPasswordToggle("confirmPassword", "toggleConfirmPasswordButton");
+  
 });

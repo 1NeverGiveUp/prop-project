@@ -36,14 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("user", JSON.stringify(userData));
         localStorage.setItem("isLoggedIn", "true");
         alert("Ro'yxatdan o'tish muvaffaqiyatli!");
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
       };
       reader.readAsDataURL(file);
     } else {
       localStorage.setItem("user", JSON.stringify(userData));
       localStorage.setItem("isLoggedIn", "true");
       alert("Ro'yxatdan o'tish muvaffaqiyatli!");
-      window.location.href = "index.html";
+      window.location.href = "../index.html";
     }
   });
 

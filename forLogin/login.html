@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login Page</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../forautstyle/autstyle.css" />
 </head>
 
@@ -16,13 +17,15 @@
         <label for="username">Foydalanuvchi nomi</label>
         <input type="text" id="username" placeholder="Foydalanuvchi nomini kiriting" required />
 
-        <label for="password">Parol</label>
-        <input type="password" id="password" placeholder="Parolni kiriting" required />
+        <div class="password-container">
+          <input type="password" id="password" placeholder="Parolni kiriting" required />
+          <i class="bx bx-hide toggle-icon" id="togglePasswordButton"></i>
+        </div>
 
         <button type="submit">Kirish</button>
       </form>
       <div class="switch-link">
-        <p>Ro'yxatdan o'tmaganmisiz? <a href="/forSignup/signup.html">Sign Up</a></p>
+        <p>Ro'yxatdan o'tmaganmisiz? <a href="../forSignup/signup.html">Sign Up</a></p>
       </div>
     </div>
   </div>
