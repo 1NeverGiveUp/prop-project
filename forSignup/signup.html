@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up Page</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../forautstyle/autstyle.css" />
 </head>
 
@@ -28,11 +29,15 @@
         <label for="telNumber">Telefon raqami</label>
         <input type="tel" id="telNumber" placeholder="Telefon raqamingizni kiriting" required />
 
-        <label for="password">Parol</label>
-        <input type="password" id="password" placeholder="Parolni kiriting" required />
-
-        <label for="confirmPassword">Parolni tasdiqlang</label>
-        <input type="password" id="confirmPassword" placeholder="Parolni tasdiqlang" required />
+        <div class="password-container">
+          <input type="password" id="password" placeholder="Parolni kiriting" required />
+          <i class="bx bx-hide toggle-icon" id="togglePasswordButton"></i>
+        </div>
+        
+        <div class="password-container">
+          <input type="password" id="confirmPassword" placeholder="Parolni tasdiqlang" required />
+          <i class="bx bx-hide toggle-icon" id="toggleConfirmPasswordButton"></i>
+        </div>
 
         <label for="profilpicture">Profilga rasm qo'shish</label>
         <input type="file" id="profilpicture" accept="image/*" required />
@@ -40,7 +45,7 @@
         <button type="submit">Sign Up</button>
       </form>
       <div class="switch-link">
-        <p>Akkauntingiz bormi? <a href="/forLogin/login.html">Login</a></p>
+        <p>Akkauntingiz bormi? <a href="login.html">Login</a></p>
       </div>
     </div>
   </div>
