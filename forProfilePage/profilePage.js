@@ -25,12 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const saveEditBtn = document.getElementById("saveEditBtn");
   const cancelEditBtn = document.getElementById("cancelEditBtn");
 
+  const backBtn = document.getElementById("backBtn")
   const editBtn = document.getElementById("editBtn");
   const logoutBtn = document.getElementById("logoutBtn");
   const deleteBtn = document.getElementById("deleteBtn");
 
   let isPasswordVisible = false;
-  let realPassword = userData.password || "********"; 
+  let realPassword = userData.password;
+  const passwordLength = realPassword ? realPassword.length : 8;
 
   function renderProfile() {
       fullNameEl.textContent = userData.name + " " + userData.lastname;
@@ -42,17 +44,25 @@ document.addEventListener("DOMContentLoaded", function () {
           ? userData.profilpicture
           : "../forPictures/profilicon.png";
 
-      passwordSpan.textContent = isPasswordVisible ? realPassword : "********";
+          if (!isPasswordVisible) {
+            passwordSpan.textContent = "*".repeat(passwordLength);
+          } else {
+            passwordSpan.textContent = realPassword;
+          }
   }
   renderProfile();
 
   togglePasswordIcon.addEventListener("click", function () {
       isPasswordVisible = !isPasswordVisible;
-      passwordSpan.textContent = isPasswordVisible ? realPassword : "********";
+      passwordSpan.textContent = isPasswordVisible ? realPassword : "*".repeat(passwordLength);
 
       // Ikonka almashtirish
       togglePasswordIcon.classList.toggle("bx-low-vision", !isPasswordVisible);
       togglePasswordIcon.classList.toggle("bx-show", isPasswordVisible);
+  });
+
+  backBtn.addEventListener("click", function () {
+    window.location.href = "../index.html";
   });
 
   editBtn.addEventListener("click", function () {
