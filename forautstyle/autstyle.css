@@ -12,9 +12,9 @@ body {
   background-size: cover;
 }
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .login-container,
 .signup-container {

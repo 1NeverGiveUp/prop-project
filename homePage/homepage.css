@@ -9,9 +9,9 @@ body {
     background-size: cover;
 }
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
     display: none;
-}
+} */
 
 header {
     position: fixed;
