@@ -73,6 +73,21 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.removeItem("isLoggedIn");
             window.location.reload();
         },
+        toggleCataloguesPanel: function () {
+            const cataloguesPanel = document.getElementById("cataloguesPanel");
+            if (cataloguesPanel.classList.contains("closed")) {
+                cataloguesPanel.classList.remove("closed");
+                cataloguesPanel.classList.add("active");
+            } else {
+                cataloguesPanel.classList.remove("active");
+                cataloguesPanel.classList.add("closed");
+            }
+        },
+        closeCataloguesPanel: function () {
+            const cataloguesPanel = document.getElementById("cataloguesPanel");
+            cataloguesPanel.classList.remove("active");
+            cataloguesPanel.classList.add("closed");
+        },
         init: function () {
             document.getElementById("toggleSidebar").addEventListener("click", MyProject.toggleSidebar);
             document.getElementById("chatToggleBtn").addEventListener("click", MyProject.toggleChatPanel);
@@ -85,6 +100,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     MyProject.sendChatMessage();
                 }
             });
+
+            const cataloguesToggleBtn = document.getElementById("cataloguesToggleBtn");
+            if (cataloguesToggleBtn) {
+                cataloguesToggleBtn.addEventListener("click", MyProject.toggleCataloguesPanel);
+            }
+            const cataloguesCloseBtn = document.getElementById("cataloguesCloseBtn");
+            if (cataloguesCloseBtn) {
+                cataloguesCloseBtn.addEventListener("click", MyProject.closeCataloguesPanel);
+            }
 
             document.addEventListener("click", function (e) {
                 const sidebar = document.getElementById("sidebar");
@@ -118,6 +142,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 ) {
                     profilePanel.classList.remove("active");
                     profilePanel.classList.add("closed");
+                }
+
+                const cataloguesPanel = document.getElementById("cataloguesPanel");
+                const cataloguesToggleBtn = document.getElementById("cataloguesToggleBtn");
+                if (
+                    cataloguesPanel &&
+                    cataloguesPanel.classList.contains("active") &&
+                    !cataloguesPanel.contains(e.target) &&
+                    e.target !== cataloguesToggleBtn
+                ) {
+                    cataloguesPanel.classList.remove("active");
+                    cataloguesPanel.classList.add("closed");
                 }
             });
 

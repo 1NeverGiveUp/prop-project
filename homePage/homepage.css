@@ -5,7 +5,8 @@ body {
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
-    background: url('../forPictures/backgroundImage.jpg') no-repeat center center fixed;
+    background-color: #fdfeff;
+    background: url('../forPictures/for_bg_dark_hom.avif') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -19,7 +20,7 @@ header {
     left: 0;
     right: 0;
     height: 60px;
-    background: rgba(0, 123, 255, 0.5);
+    background: #f8f9fa;
     color: white;
     display: flex;
     align-items: center;
@@ -49,12 +50,12 @@ header button:hover {
 
 .search-input {
     padding: 8px 12px;
-    border: 1px solid transparent;
+    border: 1px solid #007bff;
     border-radius: 4px;
     background: #ffffffb3;
     font-size: 16px;
     outline: none;
-    width: 200px;
+    width: 450px;
     transition: border 0.3s ease, background 0.3s ease;
 }
 
@@ -76,7 +77,7 @@ header button:hover {
     display: inline-block;
     padding: 8px 16px;
     margin-left: 10px;
-    background: rgba(255, 255, 255, 0);
+    background: #f4f6f8;
     color: #007bff;
     text-decoration: none;
     border: 1px solid #007bff;
@@ -85,13 +86,16 @@ header button:hover {
 }
 
 .auth-container a:hover {
-    background: rgba(0, 123, 255, 0.7);
-    color: #fff;
+    background: #007bff;
+    color: #ffffff;
+    transform: scale(1.1);
 }
+
 
 .auth-container a:active {
     transform: scale(0.98);
 }
+
 
 .profile-icon-container {
     display: none;
@@ -115,13 +119,13 @@ header button:hover {
     left: 0;
     width: 250px;
     height: calc(100% - 60px);
-    background: rgba(0, 0, 0, 0.9);
+    background: #f8f9fa;
     padding: 20px;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
     transform: translateX(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.4s ease;
     z-index: 1000;
     overflow-y: auto;
 }
@@ -130,7 +134,6 @@ header button:hover {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    color: white;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -138,19 +141,57 @@ header button:hover {
 
 #sidebar ul li a {
     text-decoration: none;
-    color: white;
+    color: rgba(0, 0, 0, 0.700);
 }
 
 #sidebar ul li a:hover {
-    text-decoration: underline;
-    color: #ffdd57;
+    color: black;
 }
 
 #sidebar.active {
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
+    color: black;
 }
+
+#sidebar.closed {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#cataloguesPanel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 80%;
+    height: 80%;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 12px;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+}
+
+#cataloguesPanel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#cataloguesPanel.closed {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+
 
 main {
     margin-top: 60px;
@@ -178,9 +219,9 @@ footer {
 
 .chat-toggle-btn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #007bff;
+    bottom: 40px;
+    right: 40px;
+    background: #000000d7;
     color: white;
     border: none;
     border-radius: 50%;
@@ -188,13 +229,14 @@ footer {
     height: 50px;
     font-size: 24px;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease, background 0.3s ease;
     z-index: 2000;
 }
 
 .chat-toggle-btn:hover {
-    background: #0056b3;
+    background: #000000;
+    transform: scale(1.1);
 }
 
 .chat-panel {
@@ -206,7 +248,7 @@ footer {
     background: rgba(0, 0, 0, 0.85);
     color: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 16px rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -221,7 +263,7 @@ footer {
 }
 
 .chat-header {
-    background: linear-gradient(135deg, #007bff, #0056b3);
+    background: linear-gradient(135deg, #000000, #ffffff64);
     color: #fff;
     padding: 14px 16px;
     display: flex;
@@ -277,7 +319,7 @@ footer {
 }
 
 .chat-messages li.sent {
-    background: #007bff;
+    background: #333;
     color: #fff;
     align-self: flex-end;
 }

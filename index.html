@@ -11,7 +11,22 @@
 <body>
   <header>
     <button id="toggleSidebar" aria-controls="sidebar" aria-expanded="false">☰ Menu</button>
-    <input type="search" placeholder="Search 🔎" aria-label="Search" class="search-input">
+    <button id="cataloguesToggleBtn">Catalogues</button>
+    <div id="cataloguesPanel" class="closed">
+        <button id="cataloguesCloseBtn">Close</button>
+        <div class="catalogues-body">
+          <ul>
+            <li><a href="#">Barcha toifalar</a></li>
+            <li><a href="#">Ko‘chmas mulk ijaralari</a></li>
+            <li><a href="#">Elektronika va texnika ijaralari</a></li>
+            <li><a href="#">Transport vositalari ijaralari</a></li>
+            <li><a href="#">Asbob-uskunalar va jihozlar ijaralari</a></li>
+            <li><a href="#">Tadbir va marosim jihozlari ijaralari</a></li>
+            <li><a href="#">Kiyim va aksessuarlar ijaralari</a></li>
+          </ul>
+        </div>
+    </div>
+    <input type="search" placeholder="Search" aria-label="Search" class="search-input">
     <div class="auth-container">
       <a href="../forLogin/login.html">Log in</a>
       <a href="../forSignup/signup.html">Sign up</a>
@@ -35,8 +50,8 @@
     </nav>
   </aside>
 
-  <main>
-    <p>Main Content</p>
+  <main id="main-content">
+
   </main>
 
   <footer>
