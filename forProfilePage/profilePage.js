@@ -55,8 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
   togglePasswordIcon.addEventListener("click", function () {
       isPasswordVisible = !isPasswordVisible;
       passwordSpan.textContent = isPasswordVisible ? realPassword : "*".repeat(passwordLength);
-
-      // Ikonka almashtirish
+      
       togglePasswordIcon.classList.toggle("bx-low-vision", !isPasswordVisible);
       togglePasswordIcon.classList.toggle("bx-show", isPasswordVisible);
   });

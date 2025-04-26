@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you!</p>
+
+        <form id="contactForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+            <label for="telNumber">Phone number:</label>
+            <input type="tel" id="telNumber" name="telNumber" required placeholder="Enter your phone number">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required placeholder="Write your message"></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div id="responseMessage"></div>
+
+        <button id="showMessages">📩 Show Messages</button>
+
+        <div class="contact-info">
+            <h3>Our Contact Info</h3>
+            <p><strong>📞 Phone:</strong> + 998 99 063 76 95</p>
+            <p><strong>✉️ Email:</strong> faxriddinovdiyorbek701@gmail.com</p>
+            <p><strong>📍 Address:</strong> 4 Street Bodomzor, Toshkent, Uzbekistan</p>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Saved Messages</h3>
+            <ul id="messagesList"></ul>
+            <button id="clearMessages"><i class="bx bx-trash"></i> Clear All Messages</button>
+        </div>
+    </div>
+
+    <script defer src="script.js"></script>
+</body>
+</html>
